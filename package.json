@@ -4,19 +4,20 @@
   "description": "generating a file using template",
   "main": "index.js",
   "scripts": {
-    "test": "npm run jshint && npm run check-style && npm run unit-test && npm run tech-test",
+    "test": "npm run jshint && npm run check-style && npm run tech-test",
     "jshint": "jshint .",
-    "unit-test": "mocha --recursive test/lib",
     "tech-test": "mocha --recursive test/techs",
     "build-sample-proj": "node ./bin/enb make -n --graph --dir test/fixtures/sample-project",
-    "check-style": "jscs lib test",
-    "coverage": "istanbul cover _mocha -- -R dot --recursive test/lib",
-    "coveralls": "npm i coveralls && istanbul cover _mocha -- -R dot --recursive test/lib --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "check-style": "jscs techs test",
+    "coverage": "istanbul cover _mocha -- -R dot --recursive test/techs",
+    "coveralls": "npm i coveralls && istanbul cover _mocha -- -R dot --recursive test/techs --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
     "chai": "3.4.1",
     "chai-as-promised": "5.2.0",
+    "check-style": "3.0.4",
     "deasync": "0.1.4",
+    "enb": "1.1.1",
     "istanbul": "0.4.1",
     "jscs": "2.7.0",
     "jshint": "2.8.0",
@@ -24,8 +25,7 @@
     "mock-enb": "0.3.0",
     "mock-fs": "3.6.0",
     "sinon": "1.16.1",
-    "sinon-chai": "2.8.0",
-    "enb": "1.1.1"
+    "sinon-chai": "2.8.0"
   },
   "dependencies": {
     "inherit": "2.2.2",

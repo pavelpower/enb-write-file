@@ -1,0 +1,1 @@
+module.exports = require('techs/write-file.js');
